@@ -13,25 +13,15 @@ La variable SECRET_KEY dentro de `tasks_project/settings.py` **ABSOLUTAMENTE NO*
 
 Mas info para en : https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-Luego de bajarse el proyecto se deben realizar los siguientes pasos
-- Para migrar el modelo del modulo models.py
-    - Moverse a la carpeta donde este `manage.py` y ejecutar:
+Luego de bajarse el proyecto:
 
-        ```python
-        python manage.py makemigrations tasks_app
-        ```
-        Solo para chequear que el comando SQL de creacion este ok:
-        ```python
-        python manage.py sqlmigrate tasks_app 0001
-        ```
-        ```python
-        python manage.py migrate
-        ```
-        
-    - Para levantar el server usar el puerto 8080
-        ```python
-        python manage.py runserver 8080
-        ```
+```
+docker build . -t tasks-app
+```
+```
+docker run -p 8080:8080 tasks-app
+```
+
 Para validar que se levanto ok el servidor, probar accediendo a `http://127.0.0.1:8080/`
 
 ## UI diseñada
