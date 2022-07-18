@@ -1,26 +1,17 @@
 # Task manager
 
-## Tests
-Para correr los tests
-```python
-python -Wa manage.py test
-```
-
-## Deployment
+## Tests & Deployment
 
 ### Aclaración importante
 La variable SECRET_KEY dentro de `tasks_project/settings.py` **ABSOLUTAMENTE NO** deberia estar hardcoded en el archivo por implicancias de seguridad
 
 Mas info para en : https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-Luego de bajarse el proyecto:
-
+Luego de bajarse el proyecto ejecutar el script `.bat` para el proceso de test&build del proyecto:
+```powershell
+test&build_app.bat
 ```
-docker build . -t tasks-app
-```
-```
-docker run -p 8080:8080 tasks-app
-```
+***Si no se dispone de windows***, ejecutar a mano los comandos dentro del `.bat`
 
 Para validar que se levanto ok el servidor, probar accediendo a `http://127.0.0.1:8080/`
 
