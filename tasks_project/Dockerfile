@@ -11,10 +11,12 @@ RUN pip install --upgrade pip
 COPY . $AppHome
 RUN pip install -r requirements.txt
 
+RUN apt-get update
+RUN apt-get install -y sqlite3
+
 EXPOSE 8080
 
 RUN python manage.py makemigrations tasks_app
 RUN python manage.py migrate
-RUN python -Wa manage.py test
 
 CMD python manage.py runserver 0.0.0.0:8080
