@@ -9,7 +9,7 @@ Mas info para en : https://docs.djangoproject.com/en/4.0/howto/deployment/checkl
 
 Luego de bajarse el proyecto ejecutar el script `.bat` para el proceso de test&build del proyecto:
 ```powershell
-test&build_app.bat
+& '.\test&build_app.bat'
 ```
 ***Si no se dispone de windows***, ejecutar a mano los comandos dentro del `.bat`
 
